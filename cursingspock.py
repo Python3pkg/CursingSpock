@@ -112,7 +112,7 @@ class CursesPlugin(PluginBase):
             'INFO': (curses.COLOR_WHITE, curses.COLOR_BLACK),
             'DEBUG': (curses.COLOR_BLUE, curses.COLOR_BLACK),
         }
-        for i, (key, (fg, bg)) in enumerate(self.colors.items()):
+        for i, (key, (fg, bg)) in enumerate(list(self.colors.items())):
             color_num = i + 1
             curses.init_pair(color_num, fg, bg)
             self.colors[key] = curses.color_pair(color_num)
